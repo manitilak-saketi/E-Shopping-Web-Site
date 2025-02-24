@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Products</title>
+<style type="text/css">
+*{
+font-family: cursive;
+}
+
+select {
+width: 200px;
+height: 25px;
+ 
+}
+span{
+margin-left: 10px;
+margin-right: 10px;
+}
+#submit{
+margin-bottom: 10px;
+text-indent: -5px;
+height: 30px;
+border: 1px solid black;
+}
+.lab{
+margin-left: -22px;
+}
+label{
+font-size: large;
+}
+input{
+width: 200px;
+height: 20px;
+margin-top: 20px;
+text-indent: 5px;
+}
+table{
+background-color:orange;
+width: 500px;
+margin-left: 500px;
+}
+</style>
+<script>
+function updateOptions() {
+   	const category = document.getElementById("category").value;
+	const brand = document.getElementById("brand");
+       brand.innerHTML = '<option value="">---Select Brand---</option>';
+	const options = {
+               mens: ["Puma", "Adidas", "Nike","H&M"],
+               womens: ["Zara","Levis","H&M"],
+               mobile: ["Oppo", "Nothing", "Sam-Sung"],
+               electronics:["Wipro","Dell","HP","LG"],
+               kids:["Lee Cooper","Levis","H&M"]
+           };
+	if (category && options[category]) {
+		options[category].forEach(function(cat) {
+		const newcat = document.createElement("option");
+		newcat.value = cat;
+		newcat.textContent =cat;
+		brand.appendChild(newcat);
+           	});
+           }
+       }
+    </script>
+</head>
+<body>
+<form action="addproduct">
+<table>
+<tr><th><h2>Add Product Details</h2></th></tr>
+<tr><th><label for="category">Category's</label><span></span><span style="margin-left: 20px"></span><span></span><span></span><span></span><span>:</span>
+<select id="category" name="pro_category" onchange="updateOptions()">
+<option>---Select Category---</option>
+<option value="mobile">Mobile</option>
+<option value="mens">Men</option>
+<option value="womens">Women</option>
+<option value="kids">Kids</option>
+<option value="electronics">Electronics</option>
+</select></th></tr>
+<tr><th><label> Select Brand</label><span></span><span style="margin-left:20px"></span><span></span><span></span><span>:</span>
+<select id="brand" name="pro_brand" style="margin-top: 10px">
+<option value="">---Select Brand---</option>
+</select>
+<tr><th><label class="lab" style="margin-right: 25px;margin-left:3px;">Enter Product Name</label><span>:</span><input placeholder="Enter Name:" name="pro_name"></th></tr>
+<tr><th><label class="lab" style="margin-right: 35px;margin-left:1px">Enter Product Price</label><span>:</span><input placeholder="Enter Price:" name="pro_price"></th></tr>
+<tr><th><label>Enter Product Quantity</label><span>:</span><input placeholder="Enter Quantity:" name="pro_quantity"></th></tr>
+<tr><th><label>Enter Product Discount</label><span>:</span><input placeholder="Enter Discount" name="pro_discount"></th></tr>
+<tr><th><input type="submit" id="submit"></th></tr>
+</table>
+</form>
+</body>
+</html>

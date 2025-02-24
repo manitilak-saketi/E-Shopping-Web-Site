@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+*{
+padding: 0%;
+margin: 0%;
+font-family: arial;
+}
+	table{
+margin-top:150px;
+margin-left:500px;
+width: 500px;
+height: 300px;
+border-radius: 10px;
+background-color: aqua;
+box-shadow: 2px 2px 15px 2px;
+transition:1.5s;
+}
+table:hover{
+scale:1.1;
+}
+input{
+background:none;
+height:30px;
+width:200px;
+text-indent: 4px; 
+font-size: 16px;
+border: 2px solid black;
+border-radius: 5px;
+margin-left: 10px;
+}
+#span1{
+margin-left: 30px;
+}
+#span2{
+	margin-left: 15px;
+}
+#submit{
+width: 30px;
+height: 25px;
+margin-left: 250px;
+}
+</style>
+</head>
+<body>
+	<form action="customerlogin">
+	<table>
+	<tr><th style="font-size: 30px">Customer Login</th> </tr>
+	<tr><th>Enter your email id<span id="span1">:</span><input placeholder=" Enter your Email Id" name="emailid">
+	</th></tr>
+	<tr><th>Enter your password<span id="span2">:</span><input placeholder="Enter your Password" name="password">
+	</th></tr>
+	<tr><th><a href="ForgetPassword.html"> forget password</a></th></tr>
+	<tr><th><input type="submit"></th></tr>
+	</table>
+	</form>
+	
+</body>
+</html>
